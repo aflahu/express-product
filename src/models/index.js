@@ -1,8 +1,8 @@
 import Sequelize from 'sequelize';
 
 import getUserModel from './user';
-import getMessageModel from './message';
 import getProductModel from './product';
+import getOrderDetileModel from './orderDetile';
 
 const sequelize = new Sequelize(
   process.env.DATABASE,
@@ -16,8 +16,8 @@ const sequelize = new Sequelize(
 
 const models = {
   User: getUserModel(sequelize, Sequelize),
-  Message: getMessageModel(sequelize, Sequelize),
   Product: getProductModel(sequelize, Sequelize),
+  OrderDetile: getOrderDetileModel(sequelize, Sequelize),
 };
 
 Object.keys(models).forEach((key) => {
