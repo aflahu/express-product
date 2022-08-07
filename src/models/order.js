@@ -1,6 +1,19 @@
-const getProductModel = (sequelize, { DataTypes }) => {
+const getOrderModel = (sequelize, { DataTypes }) => {
   const Order = sequelize.define('order', {
-   
+    status: {
+      type: DataTypes.NUMBER,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+      },
+    },
+    total: {
+      type: DataTypes.NUMBER,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+      },
+    },
     createdAt: {
       type: DataTypes.DATE,
       allowNull: false,
@@ -18,10 +31,10 @@ const getProductModel = (sequelize, { DataTypes }) => {
   });
 
   Order.associate = (models) => {
-    Order.hasMany(models.orderDetile, { onDelete: 'CASCADE' });
+    Order.hasMany(models.OrderDetile, { onDelete: '' });
   };
 
-  return Product;
+  return Order;
 };
 
 export default getProductModel;

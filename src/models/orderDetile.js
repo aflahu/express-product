@@ -1,4 +1,4 @@
-const getProductModel = (sequelize, { DataTypes }) => {
+const getOrderDetileModel = (sequelize, { DataTypes }) => {
   const OrderDetile = sequelize.define('order_detile', {
     quantity: {
       type: DataTypes.REAL,
@@ -23,11 +23,11 @@ const getProductModel = (sequelize, { DataTypes }) => {
     },
   });
 
-  Order.associate = (models) => {
-    Order.hasOne(models.Product, { onDelete: 'CASCADE' });
+  OrderDetile.associate = (models) => {
+    OrderDetile.hasOne(models.Product, { onDelete: '' });
   };
 
-  return Product;
+  return OrderDetile;
 };
 
-export default getProductModel;
+export default getOrderDetileModel;

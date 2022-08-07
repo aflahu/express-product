@@ -7,6 +7,10 @@ const getProductModel = (sequelize, { DataTypes }) => {
         notEmpty: true,
       },
     },
+    code: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     quantity: {
       type: DataTypes.REAL,
       allowNull: false,

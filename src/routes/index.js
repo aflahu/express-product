@@ -1,10 +1,9 @@
-import session from './session';
 import user from './user';
-import message from './message';
 import product from './product';
+import orderDetile from './orderDetile';
 
 export default {
-  session,
   user,
-  product
+  product,
+  orderDetile,
 };
